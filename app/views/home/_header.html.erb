@@ -1,0 +1,67 @@
+<%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" %>
+<%= javascript_include_tag "https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js", defer: true %>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <%= link_to "Recipes App", root_path, class:"navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <%= link_to "About Us", home_about_path, class:"nav-link"%>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Recipes", recipes_path, class:"nav-link"%>
+        </li>
+
+        
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%= link_to "Add Recipe", new_recipe_path, class:"nav-link"%>
+          </li>
+          
+          <li class="nav-item">
+            <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete }, class:"nav-link", id:"sign-out-link"%>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link"%>
+          </li>
+
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_registration_path, class:"nav-link"%>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Sign In", new_user_session_path, class:"nav-link"%>
+          </li>
+        <% end %>
+
+        <li class="nav-item dropdown" style="overflow: visible;">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownMenuLink">
+            Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="../search?q%5Bdish_name_or_dish_type_i_cont%5D=breakfast&commit=Search%21">Breakfasts</a></li>
+            <li><a class="dropdown-item" href="../search?q%5Bdish_name_or_dish_type_i_cont%5D=lunch&commit=Search%21">lunches</a></li>
+            <li><a class="dropdown-item" href="../search?q%5Bdish_name_or_dish_type_i_cont%5D=dinner&commit=Search%21">Dinners</a></li>
+            <li><a class="dropdown-item" href="../search?q%5Bdish_name_or_dish_type_i_cont%5D=dessert&commit=Search%21">Desserts</a></li>
+            <li><a class="dropdown-item" href="../search?q%5Bdish_name_or_dish_type_i_cont%5D=snack&commit=Search%21">Snacks</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Search", search_path, class:"nav-link"%>
+        </li>
+      </ul>
+      <%= form_with url: search_path, method: :get, class: "d-flex", role: "search" do %>
+        <%= text_field_tag :q, nil, class: "form-control me-2", placeholder: "Search", aria: { label: "Search" } %>
+        <%= submit_tag "Search", class: "btn btn-outline-success" %>
+      <% end %>
+    </div>
+  </div>
+</nav>

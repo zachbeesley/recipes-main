@@ -1,0 +1,32 @@
+<div class="container-login">
+  <div class="left-login">
+    <div class="header-login">
+      <h2 class="animation a1">Welcome Back</h2>
+      <h4 class="animation a2">Log in to your account using email and password</h4>
+    </div>
+  <div class="form-login">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <% f.label :email %><br />
+        <%= f.email_field :email,class:"form-field animation a3", placeholder:"user@example.com", autofocus: true, autocomplete: "email" %>
+
+        <% f.label :password %><br />
+        <%= f.password_field :password, class:"form-field animation a4", placeholder:"Password", autocomplete: "current-password" %>
+      <br/>
+      <br/>
+      <% if devise_mapping.rememberable? %>
+        <div class="field form-group">
+          <%= f.check_box :remember_me, class:"form-check-input animation a6" %>
+          <%= f.label :remember_me, class:"animation a6" %>
+        </div>
+      <% end %>
+      <br/>
+        <%= f.submit "Log in", class:"btn btn-primary animation a6" %>
+    <% end %>
+  </div>
+</div>
+<div class="right-login"></div>
+</div>
+
+<br/>
+<%= render "devise/shared/links" %>
+

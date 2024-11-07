@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe || Final</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- main css -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="recipe-page">
+        <section class="recipe-hero">
+          <figure class="show">
+            <%= image_tag(@recipe.image, class: "oval")%>
+          </figure>
+          <article class="recipe-info">
+            <h2><%= @recipe.dish_name %></h2>
+            <p>
+              <%= @recipe.description %>
+            </p>
+            <div class="recipe-icons">
+              <article>
+                <i class="fas fa-clock"></i>
+                <h5>prep time</h5>
+                <p><%= @recipe.prep_time%> min</p>
+              </article>
+              <article>
+                <i class="far fa-clock"></i>
+                <h5>cook time</h5>
+                <p><%= @recipe.cook_time%> min</p>
+              </article>
+              <article>
+                <i class="fas fa-user-friends"></i>
+                <h5>serving</h5>
+                <p id="serving-size"><%= @recipe.serves %> servings</p>
+              </article>
+            </div>
+            <p class="recipe-tags">
+              Tags : <% @recipe.tags.each do |tag| %>
+              <a href="../search?q%5Bdish_name_or_dish_type_i_cont%5D=<%= tag.value %>&commit=Search"><%= tag.value %></a>
+              <% end %>
+            </p>
+            <label for="batch-size">Select Batch Size:</label>
+            <select id="batch-size">
+              <% (1..5).each do |i| %>
+                <option value="<%= i %>"><%= i %></option>
+              <% end %>
+            </select>
+          </article>
+        </section>
+        <!-- content -->
+        <section class="recipe-content">
+          <article>
+            <h4>instructions</h4>
+            <!-- single instruction -->
+            <% counter = 1 %>
+            <% @recipe.steps.each do |step| %>
+            <div class="single-instruction">
+              <header>
+                <p>step <%= counter %></p>
+                <div></div>
+              </header>
+              <p>
+                <%= step.description %>
+              </p>
+              <% counter = counter + 1 %>
+            </div>
+            <% end %>
+            <!-- end of single instruction -->
+            <!-- single instruction -->
+          </article>
+          <article class="second-column">
+            <div>
+              <h4>ingredients</h4>
+              <% @recipe.ingredients.each do |ingredient| %>
+                <p class="single-ingredient" data-amount="<%= ingredient.amount %>">
+                  <span class="ingredient-amount"><%= ingredient.amount %></span>
+                  <%= ingredient.measurement %> <%= ingredient.content %></p>          
+              <% end %>
+            </div>
+            <div>
+              <h4>tools</h4>
+              <p class="single-tool">Hand Blender</p>
+              <p class="single-tool">Large Heavy Pot With Lid</p>
+              <p class="single-tool">Measuring Spoons</p>
+              <p class="single-tool">Measuring Cups</p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+    <!-- footer -->
+    <footer class="page-footer">
+      <p>
+        &copy; <span id="date"></span>
+        <span class="footer-logo">SimplyRecipes</span> Built by
+        <a href="https://www.johnsmilga.com/">Coding Addict</a>
+      </p>
+    </footer>
+
+    <script src="./js/app.js"></script>
+  </body>
+</html>
+
+
+<div>
+  <%= link_to "Edit", edit_recipe_path(@recipe), class:"btn btn-secondary" %> |
+  <%= link_to "Back", recipes_path, class:"btn btn-secondary" %>
+  <br/><br/>
+  <%= button_to "Delete recipe", @recipe, method: :delete, class:"btn btn-outline-danger" %>
+</div>
+
+

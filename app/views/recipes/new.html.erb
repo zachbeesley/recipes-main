@@ -1,0 +1,12 @@
+<% content_for :title, "New recipe" %>
+
+<h1>New recipe</h1>
+</br>
+
+<%= render "form", recipe: @recipe %>
+
+<br>
+
+<div>
+  <%= link_to "Back", recipes_path, class:"btn btn-dark" %>
+</div>

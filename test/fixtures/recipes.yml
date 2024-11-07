@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dish_name: MyString
+  dish_type: MyString
+  number_of_likes: 1
+
+two:
+  dish_name: MyString
+  dish_type: MyString
+  number_of_likes: 1

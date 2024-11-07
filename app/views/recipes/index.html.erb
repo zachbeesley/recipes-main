@@ -1,0 +1,15 @@
+
+
+<% content_for :title, "Recipes" %>
+
+<h1>Recipes</h1>
+
+<div class="recipes">
+<div class="cards">
+  <% @recipes.each do |recipe| %>
+    <%= render recipe %>
+  <% end %>
+</div>
+</div>
+
+<%= link_to "New recipe", new_recipe_path, class:"btn btn-secondary" %>

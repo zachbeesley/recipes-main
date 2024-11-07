@@ -1,0 +1,31 @@
+<% content_for :title, "Editing recipe" %>
+
+<h1>Editing recipe</h1>
+
+<%= render "form", recipe: @recipe %>
+
+<br>
+
+<div>
+  <%= link_to "Show this recipe", @recipe, class:"btn btn-secondary" %> 
+  <%= link_to "Back to recipes", recipes_path, class:"btn btn-dark" %>
+</div>
+
+<%= form_with model: @recipe, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' } do |f| %>
+  <template data-nested-form-target="template">
+    <%= f.fields_for :ingredients, Ingredient.new, child_index: 'NEW_RECORD' do |ingredient_fields| %>
+      <%= render "ingredient_form", f: ingredient_fields %>
+    <% end %>
+  </template>
+
+  <%= f.fields_for :ingredients do |ingredient_fields| %>
+    <%= render "ingredient_form", f: ingredient_fields %>
+  <% end %>
+
+  <!-- Inserted elements will be injected before that target. -->
+  <div data-nested-form-target="target"></div>
+
+  <button type="button" data-action="nested-form#add">Add ingredient</button>
+
+  <%= f.submit 'Save ingredients' %>
+<% end %>

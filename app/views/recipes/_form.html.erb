@@ -1,0 +1,111 @@
+<%= form_with(model: recipe, data: {
+  controller: "nested-form",
+  nested_form_wrapper_selector_value: '.nested-form-wrapper'
+}) do |form| %>
+  <% if recipe.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this project from being saved:</h2>
+      <ul>
+        <% recipe.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+  <form class="d-flex flex-column">
+  <!-- First Row -->
+  <div class="d-flex">
+    <div class="form-group mr-4" style="padding-right: 20px;">
+      <%= form.label :dish_name, style: "display: block", class:"form-label" %>
+      <%= form.text_field :dish_name, class:"form-control", :required => true %>
+    </div>
+    <div class="form-group mr-4" style="padding-right: 20px;">
+      <%= form.label :dish_type, style: "display: block",  class:"form-label" %>
+      <%= form.text_field :dish_type, class:"form-control", :required => true %>
+    </div>
+  </div>
+  </br>
+  <!-- Second Row -->
+  <div class="d-flex">
+    <div class="form-group mr-4 style="padding-right: 20px;">
+      <%= form.label :description, style: "display: block;",  class:"form-label" %>
+      <%= form.text_area :description, class:"form-control", :required => true, style:"width: 200%;" %>
+    </div>
+  </div>
+
+  </br>
+  <div class="d-flex">
+    <div class="form-group mr-4" style="padding-right: 20px;">
+      <%= form.label :prep_time, 'How long does it take to prep?', style: "display: block",  class:"form-label" %>
+      <%= form.number_field :prep_time, class:"form-control", :required => true %>
+    </div>
+    <div class="form-group mr-4" style="padding-right: 20px;">
+      <%= form.label :cook_time, 'How long does it take to cook?', style: "display: block",  class:"form-label" %>
+      <%= form.number_field :cook_time, class:"form-control", :required => true %>
+    </div>
+    <div class="form-group mr-4" style="padding-right: 20px;">
+      <%= form.label :serves, 'How many people does it serve?', style: "display: block",  class:"form-label" %>
+      <%= form.number_field :serves, class:"form-control", :required => true %>
+    </div>
+  </div>
+
+  </br>
+  <div class="d-flex">
+    <div class="form-group mr-4 style="padding-right: 20px;">
+      <%= form.label :image, style: "display: block",  class:"form-label" %>
+      <%= form.file_field :image, class:"form-control", :required => true %>
+    </div>
+  </div>
+
+  </br>
+  </br>
+  </br>
+  </br>
+
+  <h4>Ingredients</h4>
+  <div id='ingredients'>
+    <%= form.fields_for :ingredients do |ingredient_f| %>
+      <%= render 'ingredient_fields', form: ingredient_f %>
+    <% end %>
+  </div>
+  </br>
+  <%= link_to_add_nested(form, :ingredients, '#ingredients', link_classes: 'btn btn-primary') %> <!-- adds a link to add more items -->
+  </br>
+  </br>
+  </br>
+  </br>
+  <h4>Instructions</h4>
+  <div id='steps'>
+    <%= form.fields_for :steps do |step_f| %>
+      <%= render 'step_fields', form: step_f %>
+    <% end %>
+  </div>
+  </br>
+  <%= link_to_add_nested(form, :steps, '#steps', link_classes: 'btn btn-primary') %> <!-- adds a link to add more items -->
+  </br>
+  </br>
+  </br>
+  </br>
+  
+
+  <h4>Tags</h4>
+  <div id='tags'>
+    <%= form.fields_for :tags do |tag_f| %>
+      <%= render 'tag_fields', form: tag_f %>
+    <% end %>
+  </div>
+  </br>
+  <%= link_to_add_nested(form, :tags, '#tags', link_classes: 'btn btn-primary') %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+  </form>
+<% end %>
+
+    
+
+    
+    

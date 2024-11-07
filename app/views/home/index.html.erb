@@ -1,0 +1,73 @@
+<% content_for :title, "Recipes" %>
+
+<h2 class="breakfast-index-header">Breakfasts</h2>
+
+<div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @breakfasts.each do |breakfast| %>
+    <%= render breakfast %>
+  <% end %>
+</div>
+</div>
+</br>
+</br>
+
+<h2 class="meal-index-header">Meals</h2>
+
+<div class="recipes" style="background: #FFBF00; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @meals.each do |meal| %>
+    <%= render meal %>
+  <% end %>
+</div>
+</div>
+<br/>
+
+<h2 class="dessert-index-header">Desserts</h2>
+
+<div class="recipes" style="background: #DE3163; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @desserts.each do |dessert| %>
+    <%= render dessert %>
+  <% end %>
+</div>
+</div>
+<br/>
+
+<h2 class="snack-index-header" >Snacks</h2>
+
+<div class="recipes" style="background: #6495ED; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @snacks.each do |snack| %>
+    <%= render snack %>
+  <% end %>
+</div>
+</div>
+
+<br/>
+
+<h2 class="quick-index-header">Less Than 30 Mins</h2>
+
+<div class="recipes" style="background: #FA5F55; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @quick_foods.each do |food| %>
+    <%= render food %>
+  <% end %>
+</div>
+</div>
+
+<br/>
+
+<h2 class="easy-index-header">Less Than 5 Ingredients</h2>
+
+<div class="recipes" style="background: #CF9FFF; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @easy_foods.each do |food| %>
+    <%= render food %>
+  <% end %>
+</div>
+</div>
+
+<%= link_to "New recipe", new_recipe_path, class:"btn btn-secondary" %>
+
+
