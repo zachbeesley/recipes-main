@@ -10,6 +10,8 @@ class HomeController < ApplicationController
   end
 
   def about
+    @recipes = Recipe.all
+    @breakfasts = Recipe.where(dish_type: "Breakfast").order(:dish_name)
     @about_me = "My name is Zach" 
     @answer = 2 + 2
     puts "About action triggered"

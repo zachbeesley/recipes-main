@@ -1,0 +1,2 @@
+module LessThan30MinsHelper
+end

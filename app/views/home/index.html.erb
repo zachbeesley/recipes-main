@@ -1,12 +1,14 @@
 <% content_for :title, "Recipes" %>
 
-<h2 class="breakfast-index-header">Breakfasts</h2>
+<%= link_to "Breakfasts", breakfasts_index_path, class:"breakfast-index-header" %>
 
 <div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
-  <% @breakfasts.each do |breakfast| %>
-    <%= render breakfast %>
-  <% end %>
+<div class="scroller">
+<ul class="tag-list-scroller scroller__inner">
+<% @recipes.each do |recipe| %>
+    <li><%= render recipe %></li>
+<% end %>
+</ul>
 </div>
 </div>
 </br>
@@ -15,15 +17,17 @@
 <h2 class="meal-index-header">Meals</h2>
 
 <div class="recipes" style="background: #FFBF00; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
-  <% @meals.each do |meal| %>
-    <%= render meal %>
-  <% end %>
+<div class="scroller-reverse">
+<ul class="tag-list-scroller scroller__inner-reverse">
+<% @recipes.each do |meal| %>
+    <li><%= render meal %></li>
+<% end %>
+</ul>
 </div>
 </div>
 <br/>
 
-<h2 class="dessert-index-header">Desserts</h2>
+<%= link_to "Desserts", desserts_index_path, class:"dessert-index-header" %>
 
 <div class="recipes" style="background: #DE3163; border-radius: 30px; margin: 40px; padding: 20px;">
 <div style="display: inline-flex;">
@@ -46,7 +50,7 @@
 
 <br/>
 
-<h2 class="quick-index-header">Less Than 30 Mins</h2>
+<%= link_to "Less Than 30 Mins", less_than30_mins_index_path, class:"quick-index-header" %>
 
 <div class="recipes" style="background: #FA5F55; border-radius: 30px; margin: 40px; padding: 20px;">
 <div style="display: inline-flex; flex-wrap: wrap;">
@@ -58,7 +62,7 @@
 
 <br/>
 
-<h2 class="easy-index-header">Less Than 5 Ingredients</h2>
+<%= link_to "Less Than 5 Ingredients", less_than5_ingredients_index_path, class:"easy-index-header" %>
 
 <div class="recipes" style="background: #CF9FFF; border-radius: 30px; margin: 40px; padding: 20px;">
 <div style="display: inline-flex; flex-wrap: wrap;">

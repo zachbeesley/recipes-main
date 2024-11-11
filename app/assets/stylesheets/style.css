@@ -2,6 +2,10 @@
     --card-bg-colour: #fff;
     --card-text-colour: #070705;
     --dish-type-colour: #bb5274;
+    --dish-type-dessert: #bb5274;
+    --dish-type-meal: #FFAC1C;
+    --dish-type-breakfast: #50C878;
+    --dish-type-snack: #89CFF0;
     --global-radius: 16px;
     --card-shadow: 
     0 2.8px 2.2px rgba(0, 0, 0, 0.02),
@@ -80,7 +84,7 @@
     letter-spacing: -0.25px;
     color:#fff;
     margin: 0;
-    background-color: #89CFF0;
+    background-color: var(--dish-type-snack);
     padding: .25rem 1rem;
     border-radius: 100px;
     text-decoration:none;
@@ -91,7 +95,7 @@
     letter-spacing: -0.25px;
     color:#fff;
     margin: 0;
-    background-color: #FFAC1C;
+    background-color: var(--dish-type-meal);
     padding: .25rem 1rem;
     border-radius: 100px;
     text-decoration:none;
@@ -102,7 +106,7 @@
     letter-spacing: -0.25px;
     color:#fff;
     margin: 0;
-    background-color: #50C878;
+    background-color: var(--dish-type-breakfast);
     padding: .25rem 1rem;
     border-radius: 100px;
     text-decoration:none;
@@ -300,4 +304,58 @@ img {
 figure .show {
     height: 1000px;
     width: 1000px;
+}
+
+footer {
+    background-color: #111;
+}
+
+.footerContainer {
+    width: 100%;
+    padding: 70px 30px 20px;
+    justify-content: center;
+}
+
+.footerNav {
+    justify-content: center;
+    display: inline-flex;
+}
+
+.footerNav ul {
+    display: inline-flex;
+    justify-content: center;
+}
+
+.footerNav ul li{
+    color: white;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.3em;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.footerNav ul li a:hover{
+    opacity: 1;
+}
+
+.footerBottom {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.footerBottom p {
+    color: white;
+}
+
+.designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
 }

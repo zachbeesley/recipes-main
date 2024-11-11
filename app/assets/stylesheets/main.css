@@ -23,6 +23,10 @@ html {
   --primary-700: #3c3799;
   --primary-800: #282566;
   --primary-900: #141233;
+  --dish-type-dessert: #bb5274;
+  --dish-type-meal: #FFAC1C;
+  --dish-type-breakfast: #50C878;
+  --dish-type-snack: #89CFF0;
 
   /* grey */
   --grey-50: #f8fafc;
@@ -307,10 +311,10 @@ Navbar
   text-align: center;
   font-size: 1.25rem;
   text-transform: capitalize;
-  color: var(--grey-900);
+  color: black;
   letter-spacing: var(--letterSpacing);
   padding: 1rem 0;
-  border-top: 1px solid var(--grey-500);
+  border-top: 1px solid #fff;
   transition: var(--transition);
 }
 .nav-link:hover {
@@ -467,7 +471,7 @@ Recipes
 .tags-list a {
   text-transform: capitalize;
   display: block;
-  color: var(--grey-500);
+  color: #fff;
   transition: var(--transition);
 }
 .tags-list a:hover {
@@ -665,10 +669,26 @@ Recipe Template
   margin: 2rem 0;
   text-align: center;
 }
-.recipe-icons i {
+.recipe-icons-Dessert i {
   font-size: 1.5rem;
-  color: var(--primary-500);
+  color: var(--dish-type-dessert);
 }
+
+.recipe-icons-Meal i {
+  font-size: 1.5rem;
+  color: var(--dish-type-meal);
+}
+
+.recipe-icons-Snack i {
+  font-size: 1.5rem;
+  color: var(--dish-type-snack);
+}
+
+.recipe-icons-Breakfast i {
+  font-size: 1.5rem;
+  color: var(--dish-type-breakfast);
+}
+
 .recipe-icons h5,
 .recipe-icons p {
   margin-bottom: 0;
@@ -685,14 +705,42 @@ Recipe Template
   font-size: 0.7em;
   font-weight: 600;
 }
-.recipe-tags a {
-  background: var(--primary-500);
+.recipe-tags-Dessert a {
+  background: var(--dish-type-dessert);
   border-radius: var(--borderRadius);
   color: var(--white);
-  padding: 0.05rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   margin: 0 0.25rem;
   text-transform: capitalize;
 }
+
+.recipe-tags-Meal a {
+  background: var(--dish-type-meal);
+  border-radius: var(--borderRadius);
+  color: var(--white);
+  padding: 0.3rem 0.5rem;
+  margin: 0 0.25rem;
+  text-transform: capitalize;
+}
+
+.recipe-tags-Breakfast a {
+  background: var(--dish-type-breakfast);
+  border-radius: var(--borderRadius);
+  color: var(--white);
+  padding: 0.3rem 0.5rem;
+  margin: 0 0.25rem;
+  text-transform: capitalize;
+}
+
+.recipe-tags-Snack a {
+  background: var(--dish-type-snack);
+  border-radius: var(--borderRadius);
+  color: var(--white);
+  padding: 0.3rem 0.5rem;
+  margin: 0 0.25rem;
+  text-transform: capitalize;
+}
+
 @media screen and (min-width: 992px) {
   .recipe-hero {
     grid-template-columns: 4fr 5fr;
@@ -715,12 +763,34 @@ Recipe Template
   gap: 1.5rem;
   align-items: center;
 }
-.single-instruction header p {
+.single-instruction-Dessert header p {
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--primary-500);
+  color: var(--dish-type-dessert);
   margin-bottom: 0;
 }
+
+.single-instruction-Meal header p {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--dish-type-meal);
+  margin-bottom: 0;
+}
+
+.single-instruction-Breakfast header p {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--dish-type-breakfast);
+  margin-bottom: 0;
+}
+
+.single-instruction-Snack header p {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--dish-type-snack);
+  margin-bottom: 0;
+}
+
 .single-instruction > p {
   color: var(--grey-700);
 }

@@ -1,0 +1,11 @@
+<% content_for :title, "Recipes" %>
+
+<h2 class="breakfast-index-header">Breakfasts</h2>
+
+<div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @breakfasts.each do |breakfast| %>
+    <%= render breakfast %>
+  <% end %>
+</div>
+</div>
