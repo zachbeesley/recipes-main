@@ -5,8 +5,8 @@
 <div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
 <div class="scroller">
 <ul class="tag-list-scroller scroller__inner">
-<% @recipes.each do |recipe| %>
-    <li><%= render recipe %></li>
+<% @breakfasts.each do |breakfast| %>
+    <li><%= render breakfast %></li>
 <% end %>
 </ul>
 </div>
@@ -14,7 +14,7 @@
 </br>
 </br>
 
-<h2 class="meal-index-header">Meals</h2>
+<%= link_to "Meals", meals_index_path, class:"meal-index-header" %>
 
 <div class="recipes" style="background: #FFBF00; border-radius: 30px; margin: 40px; padding: 20px;">
 <div class="scroller-reverse">

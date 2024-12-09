@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "meals/index"
   get "less_than5_ingredients/index"
   get "less_than30_mins/index"
   get "desserts/index"

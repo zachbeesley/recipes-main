@@ -1,0 +1,74 @@
+<% content_for :title, "Recipes" %>
+
+<h2 class="meal-index-header">Meals</h2>
+
+<div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @meals.each do |meal| %>
+    <%= render meal %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="meal-index-header">Soups</h2>
+
+<div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @soupsandsalads.each do |food| %>
+    <%= render food %>
+  <% end %>
+</div>
+</div>
+
+
+<h2 class="meal-index-header">Poultry</h2>
+
+<div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @poultrys.each do |bird| %>
+    <%= render bird %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="meal-index-header">Beef</h2>
+
+<div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @beefs.each do |beef| %>
+    <%= render beef %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="meal-index-header">Seafood</h2>
+
+<div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @seafoods.each do |seafood| %>
+    <%= render seafood %>
+  <% end %>
+</div>
+</div>
+
+
+
+<h2 class="meal-index-header">Dairy Free</h2>
+
+<div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @dairyfrees.each do |food| %>
+    <%= render food %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="meal-index-header">Vegetarian</h2>
+
+<div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @vegetarians.each do |veggie| %>
+    <%= render veggie %>
+  <% end %>
+</div>
+</div>

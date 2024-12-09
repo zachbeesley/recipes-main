@@ -3,9 +3,39 @@
 <h2 class="breakfast-index-header">Breakfasts</h2>
 
 <div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
+<div style="display: inline-flex; flex-wrap: wrap;">
   <% @breakfasts.each do |breakfast| %>
     <%= render breakfast %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="breakfast-index-header">Pancakes and Waffles</h2>
+
+<div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @pancakesnwaffles.each do |pancakenwaffle| %>
+    <%= render pancakenwaffle %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="breakfast-index-header">Eggs</h2>
+
+<div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @eggs.each do |egg| %>
+    <%= render egg %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="breakfast-index-header">Smoothies</h2>
+
+<div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @smoothies.each do |smoothie| %>
+    <%= render smoothie %>
   <% end %>
 </div>
 </div>

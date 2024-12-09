@@ -359,3 +359,8 @@ footer {
     font-weight: 400;
     margin: 0px 5px;
 }
+
+.img-smaller {
+    max-width: 1000px;
+    max-height: 1300px;
+}

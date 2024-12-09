@@ -84,9 +84,15 @@
             <div>
               <h4>ingredients</h4>
               <% @recipe.ingredients.each do |ingredient| %>
+                <% if ingredient.measurement != "None" %>
                 <p class="single-ingredient" data-amount="<%= ingredient.amount %>">
                   <span class="ingredient-amount"><%= ingredient.amount %></span>
-                  <%= ingredient.measurement %> <%= ingredient.content %></p>          
+                  <%= ingredient.measurement %> <%= ingredient.content %></p>
+                <% else %>
+                  <p class="single-ingredient" data-amount="<%= ingredient.amount %>">
+                  <span class="ingredient-amount"><%= ingredient.amount %></span>
+                  <%= ingredient.content %></p>
+                <% end %>          
               <% end %>
             </div>
             <div>

@@ -1,2 +1,42 @@
-<h1>Desserts#index</h1>
-<p>Find me in app/views/desserts/index.html.erb</p>
+<% content_for :title, "Recipes" %>
+
+<h2 class="dessert-index-header">Cakes</h2>
+
+<div class="recipes" style="background: #F88379; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @cakes.each do |cake| %>
+    <%= render cake %>
+  <% end %>
+</div>
+</div>
+
+
+<h2 class="dessert-index-header">Pies</h2>
+
+<div class="recipes" style="background: #F88379; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @pies.each do |pie| %>
+    <%= render pie %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="dessert-index-header">Cookies</h2>
+
+<div class="recipes" style="background: #F88379; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @cookies.each do |cookie| %>
+    <%= render cookie %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="dessert-index-header">Tarts</h2>
+
+<div class="recipes" style="background: #F88379; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex;">
+  <% @tarts.each do |tart| %>
+    <%= render tart %>
+  <% end %>
+</div>
+</div>

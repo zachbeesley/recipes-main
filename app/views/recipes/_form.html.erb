@@ -1,3 +1,5 @@
+<div class="nav" style="display: flex-inline">
+<div>
 <%= form_with(model: recipe, data: {
   controller: "nested-form",
   nested_form_wrapper_selector_value: '.nested-form-wrapper'
@@ -16,14 +18,14 @@
 
   <form class="d-flex flex-column">
   <!-- First Row -->
-  <div class="d-flex">
+  <div class="d-flex nav">
     <div class="form-group mr-4" style="padding-right: 20px;">
       <%= form.label :dish_name, style: "display: block", class:"form-label" %>
       <%= form.text_field :dish_name, class:"form-control", :required => true %>
     </div>
     <div class="form-group mr-4" style="padding-right: 20px;">
       <%= form.label :dish_type, style: "display: block",  class:"form-label" %>
-      <%= form.select :measurement, ['Meal', 'Breakfast', 'Dessert', 'Snack', 'Other']%>
+      <%= form.select :dish_type, ['Meal', 'Breakfast', 'Dessert', 'Snack', 'Other']%>
     </div>
   </div>
   </br>
@@ -104,6 +106,11 @@
   </div>
   </form>
 <% end %>
+</div>
+<div>
+  <%= image_tag("smoothie_bowl.jpg", class:"img-smaller") %>
+</div>
+</div>
 
     
 
