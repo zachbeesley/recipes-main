@@ -1,7 +1,7 @@
 
 
 <% content_for :title, "Recipes" %>
-
+<% if user_signed_in? %>
 <h1>Recipes</h1>
 
 <div class="recipes">
@@ -13,3 +13,4 @@
 </div>
 
 <%= link_to "New recipe", new_recipe_path, class:"btn btn-secondary" %>
+<% end %>

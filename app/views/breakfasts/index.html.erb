@@ -1,5 +1,5 @@
 <% content_for :title, "Recipes" %>
-
+<% if user_signed_in? %>
 <h2 class="breakfast-index-header">Breakfasts</h2>
 
 <div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
@@ -39,3 +39,4 @@
   <% end %>
 </div>
 </div>
+<% end %>

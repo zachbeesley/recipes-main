@@ -1,11 +1,12 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
 
   # GET /recipes or /recipes.json
   def index
-    @q = Recipe.ransack(params[:q])
+    @recipes = current_user.recipes
+    @q = @recipes.ransack(params[:q])
     @recipes = @q.result(distinct: true)
   end
 
