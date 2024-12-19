@@ -2,8 +2,12 @@
 
 <% content_for :title, "Recipes" %>
 <% if user_signed_in? %>
+<% if @recipes.empty? %>
+  <h1> No recipes yet </h1>
+  <%= link_to "New recipe", new_recipe_path, class:"btn btn-secondary" %>
+<% else %>
 <h1>Recipes</h1>
-
+<%= link_to "New recipe", new_recipe_path, class:"btn btn-secondary" %>
 <div class="recipes">
 <div class="cards">
   <% @recipes.each do |recipe| %>
@@ -11,6 +15,6 @@
   <% end %>
 </div>
 </div>
+<% end %>
 
-<%= link_to "New recipe", new_recipe_path, class:"btn btn-secondary" %>
 <% end %>
