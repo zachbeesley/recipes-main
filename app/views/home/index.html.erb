@@ -3,6 +3,7 @@
 <%= link_to "Breakfasts", breakfasts_index_path, class:"breakfast-index-header" %>
 
 <div class="recipes" style="background: #50C878; border-radius: 30px; margin: 40px; padding: 20px;">
+<% if @breakfasts.count > 6 %>
 <div class="scroller">
 <ul class="tag-list-scroller scroller__inner">
 <% @breakfasts.each do |breakfast| %>
@@ -13,23 +14,53 @@
 </div>
 </br>
 </br>
+<% else %>
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @breakfasts.each do |breakfast| %>
+    <%= render breakfast %>
+  <% end %>
+</div>
+</div>
+<br/>
+<% end %>
 
 <%= link_to "Meals", meals_index_path, class:"meal-index-header" %>
 
 <div class="recipes" style="background: #FFBF00; border-radius: 30px; margin: 40px; padding: 20px;">
+<% if @meals.count > 6 %>
 <div class="scroller-reverse">
 <ul class="tag-list-scroller scroller__inner-reverse">
-<% @recipes.each do |meal| %>
+<% @meals.each do |meal| %>
     <li><%= render meal %></li>
 <% end %>
 </ul>
 </div>
 </div>
 <br/>
+<% else %>
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @meals.each do |meal| %>
+    <%= render meal %>
+  <% end %>
+</div>
+</div>
+<br/>
+<% end %>
 
 <%= link_to "Desserts", desserts_index_path, class:"dessert-index-header" %>
 
 <div class="recipes" style="background: #DE3163; border-radius: 30px; margin: 40px; padding: 20px;">
+<% if @desserts.count > 6 %>
+<div class="scroller">
+<ul class="tag-list-scroller scroller__inner">
+<% @desserts.each do |dessert| %>
+    <li><%= render dessert %></li>
+<% end %>
+</ul>
+</div>
+</div>
+<br/>
+<% else %>
 <div style="display: inline-flex;">
   <% @desserts.each do |dessert| %>
     <%= render dessert %>
@@ -37,40 +68,75 @@
 </div>
 </div>
 <br/>
+<% end %>
 
-<h2 class="snack-index-header" >Snacks</h2>
+<%= link_to "Snacks", snacks_index_path, class:"snack-index-header" %>
 
 <div class="recipes" style="background: #6495ED; border-radius: 30px; margin: 40px; padding: 20px;">
+<% if @snacks.count > 6 %>
+<div class="scroller-reverse">
+<ul class="tag-list-scroller scroller__inner-reverse">
+<% @snacks.each do |snack| %>
+    <li><%= render snack %></li>
+<% end %>
+</ul>
+</div>
+</div>
+<br/>
+<% else %>
 <div style="display: inline-flex;">
   <% @snacks.each do |snack| %>
     <%= render snack %>
   <% end %>
 </div>
 </div>
-
 <br/>
+<% end %>
 
 <%= link_to "Less Than 30 Mins", less_than30_mins_index_path, class:"quick-index-header" %>
 
 <div class="recipes" style="background: #FA5F55; border-radius: 30px; margin: 40px; padding: 20px;">
+<% if @quick_foods.count > 6 %>
+<div class="scroller">
+<ul class="tag-list-scroller scroller__inner">
+<% @quick_foods.each do |food| %>
+    <li><%= render food %></li>
+<% end %>
+</ul>
+</div>
+</div>
+<br/>
+<% else %>
 <div style="display: inline-flex; flex-wrap: wrap;">
   <% @quick_foods.each do |food| %>
     <%= render food %>
   <% end %>
 </div>
 </div>
-
 <br/>
+<% end %>
 
 <%= link_to "Less Than 5 Ingredients", less_than5_ingredients_index_path, class:"easy-index-header" %>
 
 <div class="recipes" style="background: #CF9FFF; border-radius: 30px; margin: 40px; padding: 20px;">
+<% if @easy_foods.count.keys.count > 6 %>
+<div class="scroller-reverse">
+<ul class="tag-list-scroller scroller__inner-reverse">
+<% @easy_foods.each do |food| %>
+    <li><%= render food %></li>
+<% end %>
+</ul>
+</div>
+</div>
+<br/>
+<% else %>
 <div style="display: inline-flex; flex-wrap: wrap;">
   <% @easy_foods.each do |food| %>
     <%= render food %>
   <% end %>
 </div>
 </div>
+<% end %>
 
 <%= link_to "New recipe", new_recipe_path, class:"btn btn-secondary" %>
 

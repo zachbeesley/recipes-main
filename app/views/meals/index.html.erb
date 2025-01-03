@@ -3,7 +3,7 @@
 <h2 class="meal-index-header">Meals</h2>
 
 <div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
+<div style="display: inline-flex; flex-wrap: wrap;">
   <% @meals.each do |meal| %>
     <%= render meal %>
   <% end %>
@@ -13,7 +13,7 @@
 <h2 class="meal-index-header">Soups</h2>
 
 <div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
+<div style="display: inline-flex; flex-wrap: wrap;">
   <% @soupsandsalads.each do |food| %>
     <%= render food %>
   <% end %>
@@ -24,7 +24,7 @@
 <h2 class="meal-index-header">Poultry</h2>
 
 <div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
+<div style="display: inline-flex; flex-wrap: wrap;">
   <% @poultrys.each do |bird| %>
     <%= render bird %>
   <% end %>
@@ -34,7 +34,7 @@
 <h2 class="meal-index-header">Beef</h2>
 
 <div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
+<div style="display: inline-flex; flex-wrap: wrap;">
   <% @beefs.each do |beef| %>
     <%= render beef %>
   <% end %>
@@ -44,7 +44,7 @@
 <h2 class="meal-index-header">Seafood</h2>
 
 <div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
+<div style="display: inline-flex; flex-wrap: wrap;">
   <% @seafoods.each do |seafood| %>
     <%= render seafood %>
   <% end %>
@@ -56,7 +56,7 @@
 <h2 class="meal-index-header">Dairy Free</h2>
 
 <div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
+<div style="display: inline-flex; flex-wrap: wrap;">
   <% @dairyfrees.each do |food| %>
     <%= render food %>
   <% end %>
@@ -66,7 +66,7 @@
 <h2 class="meal-index-header">Vegetarian</h2>
 
 <div class="recipes" style="background: #FFAC1C; border-radius: 30px; margin: 40px; padding: 20px;">
-<div style="display: inline-flex;">
+<div style="display: inline-flex; flex-wrap: wrap;">
   <% @vegetarians.each do |veggie| %>
     <%= render veggie %>
   <% end %>

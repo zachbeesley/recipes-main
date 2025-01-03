@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "less_than5_ingredients/index"
   get "less_than30_mins/index"
   get "desserts/index"
+  get "snacks/index"
   get "breakfasts/index"
   get "meal_planner/index"
   resources :tags

@@ -1,0 +1,41 @@
+<% content_for :title, "Recipes" %>
+
+<h2 class="snack-index-header">Snacks</h2>
+
+<div class="recipes" style="background: #89CFF0; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @snacks.each do |snack| %>
+    <%= render snack %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="snack-index-header">Sweet</h2>
+
+<div class="recipes" style="background: #89CFF0; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @sweets.each do |sweet| %>
+    <%= render sweet %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="snack-index-header">Savoury</h2>
+
+<div class="recipes" style="background: #89CFF0; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @savourys.each do |savoury| %>
+    <%= render savoury %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="snack-index-header">Dairy Free</h2>
+
+<div class="recipes" style="background: #89CFF0; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @dairyfrees.each do |diaryfree| %>
+    <%= render diaryfree %>
+  <% end %>
+</div>
+</div>

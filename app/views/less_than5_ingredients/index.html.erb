@@ -1,15 +1,21 @@
-<html>
-  <body>
+<% content_for :title, "Recipes" %>
 
-    <h1>Scroller</h1>
-    
-    <div class="scroller">
-    <ul class="tag-list-scroller scroller__inner">
-    <% @easy_foods.each do |food| %>
-        <li><%= render food %></li>
-    <% end %>
-    </ul>
-    </div>
+<h2 class="easy-index-header">Easy Recipes</h2>
 
-  </body>
-</html>
+<div class="recipes" style="background: #CF9FFF; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @easy_foods.each do |food| %>
+    <%= render food %>
+  <% end %>
+</div>
+</div>
+
+<h2 class="easy-index-header">Dairy Free</h2>
+
+<div class="recipes" style="background: #CF9FFF; border-radius: 30px; margin: 40px; padding: 20px;">
+<div style="display: inline-flex; flex-wrap: wrap;">
+  <% @dairyfrees.each do |food| %>
+    <%= render food %>
+  <% end %>
+</div>
+</div>
